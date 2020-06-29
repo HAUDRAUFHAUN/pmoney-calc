@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from .secretkey import SECRET_KEY_FILE
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,7 +28,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '$^@#&9f#^s63_1#-#tihuc7mepyzd489fk2pff5yl@wt%bqr(*'
+SECRET_KEY = SECRET_KEY_FILE
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
