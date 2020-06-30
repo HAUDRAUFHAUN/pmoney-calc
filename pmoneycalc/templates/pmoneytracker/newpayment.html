@@ -1,0 +1,55 @@
+{% extends 'base.html' %} {% block title %}Neue Auszahlung{% endblock title %}
+{% block content %}
+<br />
+<div class="container">
+  <h1 class="display-4">Neue Auszahlung</h1>
+  <br />
+  <form method="POST">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+      <span class="input-group-text">Elternteil</span>
+      <input
+        type="text"
+        class="form-control"
+        name="parent"
+        placeholder="Name"
+      />
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text">Teen</span>
+      <input type="text" class="form-control" name="child" placeholder="Name" />
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text">💶</span>
+      <input type="text" class="form-control" name="amount" />
+      <span class="input-group-text">.00</span>
+    </div>
+
+    <br />
+
+    <div class="row">
+      <div class="col-sm-3">
+        <button type="reset" class="btn btn-outline-danger">
+          <ion-icon
+            name="close-outline"
+            style="font-size: 20px; align-self: center;"
+          ></ion-icon>
+          Abbrechen
+        </button>
+      </div>
+      <br />
+      <div class="col-sm-3">
+        <button type="submit" class="btn btn-success">
+          <ion-icon
+            name="arrow-redo-outline"
+            style="font-size: 20px; align-self: center;"
+          ></ion-icon>
+          Bestätigen
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock content %}
