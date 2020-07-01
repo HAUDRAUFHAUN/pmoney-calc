@@ -11,3 +11,6 @@ def newpayment(request):
     if request.method == "POST":
         print(request.POST)
     return render(request, 'pmoneytracker/newpayment.html')
+
+def dashboard(request):
+    return render(request, 'pmoneytracker/dashboard.html')
