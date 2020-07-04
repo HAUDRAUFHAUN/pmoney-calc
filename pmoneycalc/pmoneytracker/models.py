@@ -17,4 +17,4 @@ class Payment(models.Model):
 
     def __str__(self):
         """Unicode representation of Payment."""
-        pass
+        return self.created
