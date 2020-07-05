@@ -18,11 +18,5 @@ def newpayment(request):
     return render(request, 'pmoneytracker/newpayment.html')
 
 
-def deletepayment(request, p_id):
-    p = Payment.objects.all().filter(id=p_id)
-    p.delete()
-    return HttpResponseRedirect('/dashboard/')
-
-
 def dashboard(request):
     return render(request, 'pmoneytracker/dashboard.html')

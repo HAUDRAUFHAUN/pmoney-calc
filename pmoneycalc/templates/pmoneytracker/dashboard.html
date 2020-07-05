@@ -9,7 +9,6 @@
         <th scope="col">Datum</th>
         <th scope="col">Teen</th>
         <th scope="col">Betrag</th>
-        <th scope="col">#</th>
       </tr>
     </thead>
     <tbody>
@@ -18,14 +17,6 @@
         <td>{{ p.created }}</td>
         <td>{{ p.child }}</td>
         <td>{{ p.payment}}</td>
-        <td>
-          <a href="/payments/delete/{{p.id}}/"
-            ><ion-icon
-              name="trash-outline"
-              style="font-size: 25px; color: firebrick;"
-            ></ion-icon
-          ></a>
-        </td>
       </tr>
       {% endfor %}
     </tbody>
