@@ -1,8 +1,15 @@
-{% extends 'base.html'%} {% block title %}Home{% endblock %} 
+{% extends 'base.html'%} {% block title %}Home{% endblock %} {% block content %}
+<br />
+<div class="container">
+  <h1 class="display-4">Willkommen</h1>
+  <p class="lead">
+    Dies ist ein Webservice, damit Familien das Taschengeld ihrer Kinder tracken
+    können.
+  </p>
 
-{% block content %}
-<br>
-    <div class="container">
-        <h1 class="display-4">Willkommen</h1>
-    </div>
+  <p>
+    Um diesen Service zu nutzen, muss der Familienadmin für jedes Kind, das
+    Taschengeld erhalten soll, einen Account anlegen.
+  </p>
+</div>
 {% endblock %}

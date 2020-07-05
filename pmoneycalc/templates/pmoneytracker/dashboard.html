@@ -1,14 +1,34 @@
-{% extends 'base.html' %}
-
-{% block title %}Dashboard{% endblock title %}
-
-
-{% block content %}
-<br>
-<div class="container"><h1 class="display-4">Dashboard</h1></div>   
-{% endblock content %}
-
-{% block privatecontent %}
-    Das hier ist privat...
+{% extends 'base.html' %} {% block title %}Dashboard{% endblock title %} {% block content %}
+<br />
+<div class="container"><h1 class="display-4">Dashboard</h1></div>
+{% endblock content %} {% block privatecontent %}
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Datum</th>
+        <th scope="col">Teen</th>
+        <th scope="col">Betrag</th>
+        <th scope="col">#</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in user.payment.all %}
+      <tr>
+        <td>{{ p.created }}</td>
+        <td>{{ p.child }}</td>
+        <td>{{ p.payment}}</td>
+        <td>
+          <a href="/payments/delete/{{p.id}}/"
+            ><ion-icon
+              name="trash-outline"
+              style="font-size: 25px; color: firebrick;"
+            ></ion-icon
+          ></a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 {% endblock privatecontent %}
-        
