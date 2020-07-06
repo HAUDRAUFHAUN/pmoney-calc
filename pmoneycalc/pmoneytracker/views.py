@@ -10,7 +10,7 @@ def index(request):
 
 def newpayment(request):
     if request.method == "POST":
-        print(request.POST)
+        # print(request.POST)
         p = Payment(child=request.user,
                     payment=request.POST.get('amount'), parent=request.POST.get('parent'))
 
