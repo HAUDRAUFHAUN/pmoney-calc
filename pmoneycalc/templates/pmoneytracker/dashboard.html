@@ -1,4 +1,5 @@
-{% extends 'base.html' %} {% block title %}Dashboard{% endblock title %} {% block content %}
+{% extends 'base.html' %} {% block title %}Dashboard{% endblock title %} 
+{% block content %}
 <br />
 <div class="container"><h1 class="display-4">Dashboard</h1></div>
 {% endblock content %} {% block privatecontent %}
@@ -8,6 +9,7 @@
       <tr>
         <th scope="col">Datum</th>
         <th scope="col">Teen</th>
+        <th scope="col">Elternteil</th>
         <th scope="col">Betrag</th>
       </tr>
     </thead>
@@ -16,7 +18,8 @@
       <tr>
         <td>{{ p.created }}</td>
         <td>{{ p.child }}</td>
-        <td>{{ p.payment}}</td>
+        <td>{{ p.parent }}</td>
+        <td>{{ p.payment}} 💵</td>
       </tr>
       {% endfor %}
     </tbody>
