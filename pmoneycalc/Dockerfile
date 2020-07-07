@@ -1,5 +1,5 @@
 FROM python:3.8
-MAINTAINER haudraufhaun
+LABEL maintainer="haudraufhaun"
 
 ENV PYTHONBUFFERED 1
 
