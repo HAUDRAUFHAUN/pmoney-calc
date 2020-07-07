@@ -3,5 +3,4 @@
 /.idea
 pmoneycalc/pmoneycalc/secretkey.py
 pmoneycalc/pmoneycalc/__pycache__/secretkey.cpython-38.pyc
-pmoneycalc/.vscode/tasks.json
-pmoneycalc/.vscode/launch.json
+pmoneycalc/.vscode/
