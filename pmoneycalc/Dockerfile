@@ -1,10 +1,10 @@
-FROM python:3.8
+FROM python:3.8.3-alpine
 LABEL maintainer="haudraufhaun"
 
 ENV PYTHONBUFFERED 1
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
+RUN apk update \
+    && apk add -f \
         postgresql-client \
     && rm -rf /var/lib/apt/lists/*
 
