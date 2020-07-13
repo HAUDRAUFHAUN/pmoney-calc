@@ -20,3 +20,6 @@ def newpayment(request):
 
 def dashboard(request):
     return render(request, 'pmoneytracker/dashboard.html')
+
+def outlogged(request):
+    return render(request, 'outlogged.html')
