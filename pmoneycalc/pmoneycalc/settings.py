@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # additional django stuff that isn't included basicly 
     'crispy_forms',
 
     # own apps
