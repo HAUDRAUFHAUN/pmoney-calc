@@ -1,10 +1,25 @@
-version: '3.4'
+version: "3.4"
 
 services:
-  pmoneycalc:
-    image: pmoneycalc
+  db:
+    container_name: postgresdb
+    image: postgres:latest
+    restart: always
+    env_file:
+      - project.env
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  web:
+    container_name: django
     build:
       context: .
       dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
     ports:
-      - 8000
+      - 80:8000
+
+volumes:
+  postgres-data:

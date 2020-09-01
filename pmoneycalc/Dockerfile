@@ -2,17 +2,26 @@ FROM python:3.8.3-alpine
 LABEL maintainer="haudraufhaun"
 
 ENV PYTHONBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE 1
 
 RUN apk update \
     && apk add -f \
-        postgresql-client \
-    && rm -rf /var/lib/apt/lists/*
+        postgresql-client 
 
-WORKDIR /usr/src/app
-COPY requirements.txt ./
+RUN apk add build-base 
+
+RUN mkdir /code
+
+WORKDIR /code
+
+COPY ./requirements.txt /code/
+
 RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
-COPY . .
 
-EXPOSE 8000
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+RUN pip install -r ./requirements.txt
+
+COPY . /code/
+
+RUN apk update && apk add -y netcat
+ 
+ENTRYPOINT ["/code/entrypoint.sh"]
