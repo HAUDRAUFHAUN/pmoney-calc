@@ -89,10 +89,10 @@ WSGI_APPLICATION = 'pmoneycalc.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": Database.NAME,
-        "USER": Database.USER,
-        "PASSWORD": Database.PASSWORD,
+        "USER": "administrator",
+        "PASSWORD": "12secretpassword34",
         "HOST": Database.HOST,
         "PORT": Database.PORT,
     }
